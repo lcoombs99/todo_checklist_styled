@@ -4,18 +4,30 @@ import './App.css';
 import styled from 'styled-components';
 
 const ListItem = styled.li`
-    &:hover {
+    margin: 1rem 0;
+    padding: 0.75rem;
+    cursor: pointer;
+    border-radius: 100px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    
+    &:nth-child(odd) {
         background: white;
         color: #492365;
+        &:hover {
+            background: #492365;
+            color: white;
+        }
     }
-    margin: 1rem 0;
-    background: #492365;
-    color: white;
-    padding: 1rem;
-    cursor: pointer;
-    border-radius: 4px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    &:nth-child(even) {
+        background: #492365;
+        color: white;
+        &:hover {
+            background: white;
+            color: #492365;
+        }
+    }
 `
+
 const App = () => {
   const [todoItems, setTodoItems] = useState([
     { id: 't1', text: 'Finish homework' },
